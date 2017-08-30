@@ -5,7 +5,7 @@ var axios = require('axios');
 
 router.post('/',(req,res,next)=>{
     var { username } = req.query
-    axios.get(`https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${username}?api_key=RGAPI-50633443-46a4-4f96-8156-ad91df56a9b3`)
+    axios.get(`https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${username}?api_key=RGAPI-a1aff7f1-fde0-4a55-adb5-71bee21782c6`)
     .then((name)=> {
         res.send(name.data)
     })

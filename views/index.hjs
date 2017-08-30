@@ -24,6 +24,7 @@
         <p class="demo" style="font-size: 30px;">英雄联盟美服召唤师查询系统</p>
         <p>昵称： ${data.name}</p>
         <p>玩家等级： ${data.summonerLevel}</p>
+        <p>用户ID： ${data.id}</p>
          `);
     },error: function(){
       alert("此用户不存在")
