@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <meta charset="UTF-8">
   </head>
   <body>
-    <input type="text" placeholder="请输入您想查询的召唤师昵称" style="width: 200px;" class="input">
-    <button onclick="searchName()">搜索</button>
-    <div class="demo" style="font-size: 30px;">英雄联盟美服召唤师查询系统</div>
-    <img src="" id="weatherIconData" height="100" width="100">
+    <svg width="100%" height="100" id="svg">
+      <text text-anchor="middle" x="50%" y="50%" class="text text-1">
+        英雄联盟美服召唤师查询系统
+      </text>
+      <text text-anchor="middle" x="50%" y="50%" class="text text-2">
+        英雄联盟美服召唤师查询系统
+      </text>
+      <text text-anchor="middle" x="50%" y="50%" class="text text-3">
+        英雄联盟美服召唤师查询系统
+      </text>
+      <text text-anchor="middle" x="50%" y="50%" class="text text-4">
+        英雄联盟美服召唤师查询系统
+      </text>
+  </svg> 
+  <div class="searchPart">
+    <input type="text" placeholder="请输入您想查询的召唤师昵称" class="input search-input">
+    <a onclick="searchName()" class="searchBtn" type>搜索</a>
+  </div> 
+    
   </body>
+  <div class="demo">
+    <p class="beforeText">请先在上方搜索框内输入召唤师昵称</p>
+  </div>
   <script>
     function searchName(){
     var sn = $('.input').val();
@@ -21,10 +39,10 @@
         $('.demo').empty()
         $("#weatherIconData").attr('src', "http://ddragon.leagueoflegends.com/cdn/7.17.1/img/profileicon/"+data.profileIconId+".png")
         $( ".demo" ).append(`
-        <p class="demo" style="font-size: 30px;">英雄联盟美服召唤师查询系统</p>
         <p>昵称： ${data.name}</p>
         <p>玩家等级： ${data.summonerLevel}</p>
         <p>用户ID： ${data.id}</p>
+        <img src="http://ddragon.leagueoflegends.com/cdn/7.17.1/img/profileicon/${data.profileIconId}.png" height="100" width="100" class="userIcon">
          `);
     },error: function(){
       alert("此用户不存在")
