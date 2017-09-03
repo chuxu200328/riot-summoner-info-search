@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <link rel='stylesheet' href='/stylesheets/index.css' />
@@ -35,15 +35,20 @@
     $.ajax({
       url: `/api?username=${sn}`,
       method: 'POST',
-      success: function(data) {
-        $('.demo').empty()
-        $("#weatherIconData").attr('src', "http://ddragon.leagueoflegends.com/cdn/7.17.1/img/profileicon/"+data.profileIconId+".png")
+      success: function (data) {
+        console.log(data)
+         if (data.status !== 404) {
+            $('.demo').empty()
+            $("#weatherIconData").attr('src', "http://ddragon.leagueoflegends.com/cdn/7.17.1/img/profileicon/" + data.profileIconId + ".png")
         $( ".demo" ).append(`
         <p>昵称： ${data.name}</p>
         <p>玩家等级： ${data.summonerLevel}</p>
         <p>用户ID： ${data.id}</p>
         <img src="http://ddragon.leagueoflegends.com/cdn/7.17.1/img/profileicon/${data.profileIconId}.png" height="100" width="100" class="userIcon">
          `);
+        } else {
+         alert("此用户不存在")
+}
     },error: function(){
       alert("此用户不存在")
     }
