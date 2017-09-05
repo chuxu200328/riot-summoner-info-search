@@ -10,7 +10,7 @@ request('https://ddragon.leagueoflegends.com/api/versions.json',(err,response,ve
 */
 router.post('/',(req,res,next)=>{
     var { username } = req.query
-    axios.get(`https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${username}?api_key=RGAPI-313506a6-457b-4e28-bce9-3ab232d1370f`)
+    axios.get(`https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${username}?api_key=RGAPI-9474c009-3053-4525-97cc-332e403d18e0`)
         .then((name) => {
             console.log(name.data)
             res.send(name.data)
