@@ -1,13 +1,20 @@
 var express = require('express');
 var router = express.Router();
-var axios = require('axios');
+var request = require('request');
+var axios = require('axios')
 /* GET home page. */
-
+/*
+request('https://ddragon.leagueoflegends.com/api/versions.json',(err,response,versions) => {
+        var currentVersion = versions[0]
+    })
+*/
 router.post('/',(req,res,next)=>{
     var { username } = req.query
-    axios.get(`https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${username}?api_key=RGAPI-2f9a9362-9640-4e65-a575-ad62df19abe9`)
-    .then((name)=> {
-        res.send(name.data)
+    axios.get(`https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${username}?api_key=RGAPI-9474c009-3053-4525-97cc-332e403d18e0`)
+        .then((name) => {
+            console.log(name.data)
+            res.send(name.data)
+        
     })
 })
 

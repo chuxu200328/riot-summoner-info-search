@@ -61,15 +61,13 @@ html,body{
 }
 .searchBtn{
     display: inline;
-    height: 42px;
-    width: 10%;
     border:  none;
     box-sizing: border-box;
     background-color: #fff;
     position: relative;
     left: -5px;
     padding-top: 9px;
-    padding-bottom: 11px;
+    padding-bottom: 13.5px;
     padding-left: 15px;
     padding-right: 15px;
     border-left: 1px solid rgba(74, 74, 74, 0.38);
