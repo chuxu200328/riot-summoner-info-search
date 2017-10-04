@@ -47,10 +47,10 @@
         <img src="http://ddragon.leagueoflegends.com/cdn/7.17.1/img/profileicon/${data.profileIconId}.png" height="100" width="100" class="userIcon">
          `);
         } else {
-         alert("此用户不存在")
+         alert("lalalal")
 }
     },error: function(){
-      alert("此用户不存在")
+      alert("lalalal")
     }
 });
  }
